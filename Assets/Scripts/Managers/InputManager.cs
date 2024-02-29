@@ -2,13 +2,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//using Unity.Netcode;
 
 public class InputManager : MonoBehaviour
 {
     public float throttleInput, steerInput, yawInput, pitchInput, rollInput;
     public bool isBoost, isDrift, isAirRoll;
     public bool isJump, isJumpUp, isJumpDown;
-    /*void Update()
+    
+    void Update()
     {
         throttleInput = GetThrottle();
         steerInput = GetSteerInput();
@@ -24,7 +26,7 @@ public class InputManager : MonoBehaviour
         isBoost = Input.GetButton("RB") || Input.GetMouseButton(0);
         isDrift = Input.GetButton("LB") || Input.GetKey(KeyCode.LeftShift);
         isAirRoll = Input.GetButton("LB") || Input.GetKey(KeyCode.LeftShift);
-    }*/
+    }
 
     private static float GetRollInput()
     {
@@ -77,11 +79,11 @@ public class InputManager : MonoBehaviour
         //currentInput = Mathf.SmoothDamp(currentInput, target, ref vel, 1f, Mathf.Infinity, Time.fixedDeltaTime);
         //return currentInput * Mathf.Sign(Input.GetAxis(axisName));
     }
-    
+    /*
     private void OnGUI()
     {
         GUILayout.HorizontalSlider(pitchInput, -1, 1, GUILayout.Width(200));
         GUILayout.HorizontalSlider(yawInput, -1, 1, GUILayout.Width(200));
         GUILayout.HorizontalSlider(rollInput, -1, 1, GUILayout.Width(200));
-    }
+    }*/
 }

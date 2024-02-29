@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17276844, g: 0.21589246, b: 0.2978263, a: 1}
+  m_IndirectSpecularColor: {r: 0.1727681, g: 0.21589208, b: 0.29782575, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2064,7 +2064,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -7317,7 +7317,7 @@ Transform:
   - {fileID: 480595167}
   - {fileID: 494479471}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1027540165
 PrefabInstance:
@@ -8128,7 +8128,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1565740257}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7151f07b1095d26408ad9cc06637cf37, type: 3}
   m_Name: 
@@ -13902,7 +13902,7 @@ MonoBehaviour:
   isDrift: 0
   isAirRoll: 0
   isJump: 0
-  isJumpUp: 0
+  isJumpUp: 1
   isJumpDown: 0
   axisName: Horizontal
   sensitivityCurve:
@@ -28851,6 +28851,16 @@ PrefabInstance:
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1258923820049204480, guid: 05668fc0bdd598742a14914a4dae67b7,
+        type: 3}
+      propertyPath: isCanDrive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258923820049204480, guid: 05668fc0bdd598742a14914a4dae67b7,
+        type: 3}
+      propertyPath: isAllWheelsSurface
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1258923820049204481, guid: 05668fc0bdd598742a14914a4dae67b7,
         type: 3}
       propertyPath: m_Name
@@ -28905,6 +28915,11 @@ PrefabInstance:
         type: 3}
       propertyPath: BoostForceMultiplier
       value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258923820049204540, guid: 05668fc0bdd598742a14914a4dae67b7,
+        type: 3}
+      propertyPath: isUseDamperTorque
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5060808422325620268, guid: 05668fc0bdd598742a14914a4dae67b7,
         type: 3}
@@ -29096,7 +29111,7 @@ PrefabInstance:
     - target: {fileID: 2532842153811578196, guid: 2946bfcea95aa1d40872741310581650,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2532842153811578196, guid: 2946bfcea95aa1d40872741310581650,
         type: 3}
@@ -29216,6 +29231,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279426996154206766, guid: e8cd9f43827911841bd4f496c5495ef2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8cd9f43827911841bd4f496c5495ef2, type: 3}
@@ -29698,7 +29718,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!64 &8756182902318295252
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -29707,7 +29727,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8756182902318295251}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1

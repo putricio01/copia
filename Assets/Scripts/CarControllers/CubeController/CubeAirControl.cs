@@ -1,9 +1,13 @@
 ﻿using UnityEngine;
+using Unity.Netcode;
+
+
 
 [RequireComponent(typeof(CubeController))]
-public class CubeAirControl : MonoBehaviour
+public class CubeAirControl : NetworkBehaviour
 {
     public bool isUseDamperTorque = true;
+    
     
     float _inputRoll = 0, _inputPitch = 0, _inputYaw = 0;
     
@@ -18,7 +22,7 @@ public class CubeAirControl : MonoBehaviour
     const float Dp = -2.798194258050845f; // drag coefficient for pitch
     const float Dy = -1.886491900437232f; // drag coefficient for yaw
     #endregion
-
+    
     void Start()
     {
         _rb = GetComponentInParent<Rigidbody>();

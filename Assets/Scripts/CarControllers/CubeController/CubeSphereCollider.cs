@@ -1,6 +1,7 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
+
 public class CubeSphereCollider : MonoBehaviour
 {
     public bool isTouchingSurface = false;
@@ -10,7 +11,7 @@ public class CubeSphereCollider : MonoBehaviour
     Vector3 _rayContactPoint, _rayContactNormal;
     
     Rigidbody _rb;
-    
+ 
     private void Start()
     {
         _rb = GetComponentInParent<Rigidbody>();

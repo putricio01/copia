@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
+using Unity.Netcode;
 
-public class BallTrail : MonoBehaviour
+public class BallTrail : NetworkBehaviour
 {
     public float trailTime = 0.7f;
     

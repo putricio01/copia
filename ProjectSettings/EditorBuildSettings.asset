@@ -5,16 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: Assets/Scenes/SimpleMLTest.unity
-    guid: cf6268627c28d7844979cd87f9dbb096
-  - enabled: 0
-    path: Assets/ML-Agents/Experiments/CalmHover/CalmHover.unity
-    guid: 665a09b769628f34ea7e9a21dea49125
   - enabled: 1
-    path: Assets/ML-Agents/Experiments/AirDribble/AirDribble.unity
-    guid: 81128f0d5fa5f3446a8e044e2f64d4ff
-  m_configObjects: {}
+    path: Assets/Scenes/trez8.unity
+    guid: 9d015f58289db4ac0bb58ba56370ebf8
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 0d5eb283b9b9a4f96a5cf12538ab75d4,
+      type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 316b7d9e1beec405284f8ba40baca5cf,
+      type: 2}
+  m_UseUCBPForAssetBundles: 0

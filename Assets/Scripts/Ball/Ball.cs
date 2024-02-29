@@ -1,8 +1,9 @@
 ﻿using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using Unity.Netcode;
 
-public class Ball : MonoBehaviour
+public class Ball : NetworkBehaviour
 {
     [SerializeField] [Range(10,80)] float randomSpeed = 40;
     [SerializeField] float initialForce = 400;
@@ -58,18 +59,40 @@ public class Ball : MonoBehaviour
         _rb.velocity = direction * speedRange;
     }
 
+ 
+
+// This method is called on the client and then calls the ServerRpc
+[ServerRpc(RequireOwnership = false)]
+    void RequestOwnershipServerRpc(ulong newOwnerClientId)
+    {
+        var networkObject = GetComponent<NetworkObject>();
+        if (networkObject != null)
+        {
+            networkObject.ChangeOwnership(newOwnerClientId);
+        }
+    }
+
     private void OnCollisionEnter(Collision col)
     {
-
-        if (col.gameObject.CompareTag("Player"))
-        {
-            float force = initialForce + col.rigidbody.velocity.magnitude * hitMultiplier;
+         float force = initialForce + col.rigidbody.velocity.magnitude * hitMultiplier;
             //Vector3 dir = transform.position - col.contacts[0].point;
             var dir = transform.position - col.transform.position;
+        if (col.gameObject.CompareTag("Player"))
+        {
+            var networkObject = col.gameObject.GetComponent<NetworkObject>();
+            if (networkObject != null && !networkObject.IsOwner)
+            {
+                RequestOwnershipServerRpc(networkObject.OwnerClientId);
+            }
+
+            
+            
+            
             _rb.AddForce(dir.normalized * force);
-        }
+            }
+        
 
-
+ 
         if (col.gameObject.CompareTag("Ground"))
             isTouchedGround = true;
 
@@ -79,5 +102,12 @@ public class Ball : MonoBehaviour
         //    //rb.AddForce(Vector3.up * -downForce);
         //        rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y - SlowVelocityGround, rb.velocity.z);
         //    }
+    }
+    public void Respawn()
+    {
+        // Set the position to the spawn point (you can hardcode it or reference a Transform)
+        transform.position = new Vector3(0, 1, 0); // Example position
+        _rb.velocity = Vector3.zero;
+        _rb.angularVelocity = Vector3.zero;
     }
 }

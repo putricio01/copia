@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
+using Unity.Netcode;
 
 [RequireComponent(typeof(CubeController))]
-public class CubeGroundControl : MonoBehaviour
+public class CubeGroundControl : NetworkBehaviour
 {
     [Header("Steering")]
     [Range(0,100)]
@@ -17,7 +18,7 @@ public class CubeGroundControl : MonoBehaviour
     Rigidbody _rb;
     CubeController _controller;
     CubeWheel[] _wheelArray;
-    
+  
     void Start()
     {
         _rb = GetComponentInParent<Rigidbody>();

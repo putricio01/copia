@@ -2,8 +2,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Netcode;
 
-public class CubeDebugController : MonoBehaviour
+
+public class CubeDebugController : NetworkBehaviour
 {
     private CubeWheel[] _wheelArray;
     private CubeSphereCollider[] _sphereArray;

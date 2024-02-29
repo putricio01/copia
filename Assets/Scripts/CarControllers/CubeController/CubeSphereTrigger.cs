@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+
 public class CubeSphereTrigger : MonoBehaviour
 {
     public bool isDebug = false;

@@ -8,6 +8,7 @@ public class CubeBoxTrigger : MonoBehaviour
     public bool isDebug = false;
     CubeController controller;
     Collider col;
+  
     void Start()
     {
         controller = GetComponentInParent<CubeController>();

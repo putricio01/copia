@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
+using Unity.Netcode;
 
 [RequireComponent(typeof(CubeController))]
-public class CubeJumping : MonoBehaviour
+public class CubeJumping : NetworkBehaviour
 {
     [Header("Forces")]
     [Range(0.25f,4)]
@@ -19,7 +20,7 @@ public class CubeJumping : MonoBehaviour
 
     Rigidbody _rb;
     CubeController _controller;
-
+   
     void Start()
     {
         _rb = GetComponentInParent<Rigidbody>();

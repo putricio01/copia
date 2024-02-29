@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class test : MonoBehaviour
 {
     Rigidbody rb;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
